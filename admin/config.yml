@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main  # Use the branch where your content will be stored
+
+media_folder: "static/uploads"  # Folder where media files (images, videos) are stored
+public_folder: "/uploads"      # Public URL path for media files
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"  # Folder where blog posts are stored
+    create: true            # Allow new posts to be created
+    slug: "{{slug}}"        # Slug for URL based on title
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
